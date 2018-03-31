@@ -20,7 +20,7 @@ with urllib.request.urlopen('https://map.freifunk-myk.de/hopglass/nodes.json') a
 # Lese Nodeliste ein
 nodelist_json = json.load(open('nodelist.json'))
 
-# Extrahiere lastseen
+# Extrahiere lastseen und hostname
 lastseen_list = {}
 hostname_list = {}
 for n in data["nodes"]:
