@@ -4,11 +4,10 @@ Ihr Router $HOSTNAME ist seit $TIMEDELTA, also seit dem $LASTSEEN offline.
 
 Meistens hilft es, wenn Sie den Router 1x vom Strom trennen und wieder einstecken. Er startet dann neu.
 
-Sollte das nicht funktionieren oder wollen Sie diese automatisch generierten Mails nicht mehr erhalten wollen, benachrichtigen Sie bitte $EMAIL.
-Antworten Sie nicht auf diese Mail. Ihre Antwort wird nicht gelesen.
-
-Siese Nachricht erhalten Sie nach 1,3 und 7 Tagen Offlinezeit.
+Sollte das nicht funktionieren oder wollen Sie diese automatisch generierten Mails nicht mehr erhalten,
+benachrichtigen Sie $KEEPER_MAIL.
+Antworten Sie nicht an die Adresse, von der aus diese eMail gesendet wurde. Sie würde dann gelesen werden.
 
 
 Mit freundlichen Grüßen
-Das Monitoringskript (von Norbert Härig)
+Das Monitoringskript (von $KEEPER_NAME)
