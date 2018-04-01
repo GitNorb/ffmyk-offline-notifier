@@ -1,4 +1,4 @@
-Hallo $OWNER,
+Hallo,
 
 Ihr Router $HOSTNAME ist seit $TIMEDELTA, also seit dem $LASTSEEN offline.
 

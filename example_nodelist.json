@@ -1,22 +1,33 @@
 {
-  "keeper":
-  {
-   "address":"keeper@example.de",
-   "name":"Mr Keeper",
-   "notify_after_days":[3,7]
+  "keeper": {
+    "name": "Max Mustermann",
+    "address": "mm@example.org"
   },
   "nodes": [
     {
-      "id":"18a6f7cf15b8",
-      "owner":"Alfred",
-      "addresses":"abc@example.com",
-      "notify_after_days":[3,7,13]
+      "id": "18a6f7cf15b8",
+      "enabled": true,
+      "addresses": [
+        "abc@example.com",
+        "abc@example.de"
+      ],
+      "notify_after_days": [
+        3,
+        7,
+        13
+      ]
     },
     {
-      "id":"18a6f7ea954e",
-      "owner":"Miki",
-      "addresses":"abc@example.org",
-      "notify_after_days":[3,7,13]
+      "id": "18a6f7ea954e",
+      "enabled": false,
+      "addresses": [
+        "abc@example.org"
+      ],
+      "notify_after_days": [
+        1,
+        7,
+        13
+      ]
     }
-    ]
+  ]
 }
