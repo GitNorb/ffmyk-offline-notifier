@@ -5,8 +5,8 @@ from dateutil.parser import parse
 import datetime
 
 def merge_data(nodelist_json, hostname_map, lastseen_map):
-    for n in nodelist_json["nodes"]:
-        id = n["id"]
+    for key,value in nodelist_json["nodes"].items():
+        id = key
         try:
             hostname = hostname_map[id]
             lastseen = lastseen_map[id]
@@ -20,9 +20,9 @@ def merge_data(nodelist_json, hostname_map, lastseen_map):
             timedelta = "unknown"
             hostname = "unknown"
 
-        n["timedelta"] = timedelta
-        n["lastseen"] = lastseen
-        n["hostname"] = hostname
+        value["timedelta"] = timedelta
+        value["lastseen"] = lastseen
+        value["hostname"] = hostname
     return nodelist_json
 
 def extract_hostname_and_lastseen(nodelist):

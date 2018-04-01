@@ -3,9 +3,8 @@
     "name": "Max Mustermann",
     "address": "mm@example.org"
   },
-  "nodes": [
-    {
-      "id": "18a6f7cf15b8",
+  "nodes": {
+    "18a6f7cf15b8": {
       "enabled": true,
       "addresses": [
         "abc@example.com",
@@ -17,8 +16,7 @@
         13
       ]
     },
-    {
-      "id": "18a6f7ea954e",
+    "18a6f7ea954e": {
       "enabled": false,
       "addresses": [
         "abc@example.org"
@@ -29,5 +27,5 @@
         13
       ]
     }
-  ]
+  }
 }
