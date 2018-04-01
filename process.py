@@ -2,7 +2,7 @@
 
 
 from dateutil.parser import parse
-
+import datetime
 
 def merge_data(nodelist_json, hostname_map, lastseen_map):
     for n in nodelist_json["nodes"]:
@@ -10,14 +10,17 @@ def merge_data(nodelist_json, hostname_map, lastseen_map):
         try:
             hostname = hostname_map[id]
             lastseen = lastseen_map[id]
+            timedelta = datetime.datetime.now(datetime.timezone.utc) - lastseen
         except KeyError:
             # Wenn Knoten zu lange offline sind, verschinden sie von der Karte.
             # Sie stehen dann nicht mehr in der Datenbank.
             # Wird hier abgefangen.
             # print('I got a KeyError for id "%s"' % str(id))
             lastseen = "unknown"
+            timedelta = "unknown"
             hostname = "unknown"
 
+        n["timedelta"] = timedelta
         n["lastseen"] = lastseen
         n["hostname"] = hostname
     return nodelist_json
