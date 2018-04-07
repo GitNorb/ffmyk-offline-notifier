@@ -1,7 +1,7 @@
 # Damit private Daten privat bleiben.
 nodelist.json
 nodelist_new.json
-
+mailsecret.json
 
 
 # Created by https://www.gitignore.io/api/python,pycharm
