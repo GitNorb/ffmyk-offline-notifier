@@ -3,7 +3,8 @@ from dateutil.tz import tzlocal
 import locale
 import mail
 
-locale.setlocale(locale.LC_TIME, "de_DE")
+locale.setlocale(locale.LC_ALL, "german")
+#locale.setlocale(locale.LC_TIME, "de_DE")
 
 
 def print_timedelta(timedelta):
@@ -45,7 +46,7 @@ def worker_stdout(nodes):
             print(id + ": Knoten offline.")
             # Weitere Infos drucken, wenn vorhanden
             if type(timedelta) is not str:
-                print(id + ": " + hostname + " seit " + print_timedelta(timedelta) + " offline. (" + print_date(lastseen) + ")")
+                print(id + ": " + hostname + " " + print_timedelta(timedelta) + " offline. (" + print_date(lastseen) + ")")
             print()  # NewLine
 
 def worker_mail(nodes,keeper):
