@@ -3,7 +3,7 @@ from dateutil.tz import tzlocal
 import locale
 import mail
 
-locale.setlocale(locale.LC_ALL, "german")
+#locale.setlocale(locale.LC_ALL, "german")
 #locale.setlocale(locale.LC_TIME, "de_DE")
 
 
