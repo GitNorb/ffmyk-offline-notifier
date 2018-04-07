@@ -22,7 +22,7 @@ def print_date(input):
     # Auf eigene Zeitzone (des Servers)
     local = input.astimezone(tzlocal())
 
-    date = datetime.datetime.strftime(local, "%d. %B %Y, %H:%M") + " Uhr"
+    date = datetime.datetime.strftime(local, "%d.%m.%Y, %H:%M") + " Uhr"
     return date
 
 
@@ -75,7 +75,7 @@ def worker_mail(nodes,keeper):
                 subject=mail.createMailSubject(hostname)
                 text=mail.createMailText(hostname, print_timedelta(timedelta),print_date(lastseen), keeper_mail, keeper_name)
                 print(hostname+ ": Send Mail to " + addr + ". " + str(timedelta.days) +" day(s) offline.")
-                #mail.sendMail(addr,subject,text)
+                mail.sendMail(addr,subject,text)
 
 def test_for_notify_at_day(timedelta,list_of_days):
     day_offline = timedelta.days
