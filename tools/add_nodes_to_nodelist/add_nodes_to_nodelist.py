@@ -33,7 +33,7 @@ for node_new in new_nodes_list:
         # Erstelle Standardwerte
         enabled = False
         addresses = []
-        notify_at_day = [1, 3, 7, 13]
+        notify_at_day = [2, 7, 13]
 
     # Füge Knoten neuer Map hinzu
     new_nodes_map[node_new] = {}
