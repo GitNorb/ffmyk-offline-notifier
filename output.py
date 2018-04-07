@@ -11,7 +11,7 @@ def print_timedelta(timedelta):
         return input
     days = timedelta.days
     hours = int(timedelta.seconds / 3600)
-    output = str(days) + " Tag(e) und " + str(hours) + " Stunde(n)"
+    output = str(days) + " Tag(e)" # und " + str(hours) + " Stunde(n)"
     return output
 
 
