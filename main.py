@@ -21,4 +21,5 @@ nodelist_json = process.merge_data(nodelist_json, hostname_list, lastseen_list)
 # TODO: Sortieren nach Timedelta
 
 # Output auf Konsole und bei Bedarf Mail
-output.worker(nodelist_json["nodes"])
+output.worker_stdout(nodelist_json["nodes"])
+output.worker_mail(nodelist_json["nodes"], nodelist_json["keeper"])
