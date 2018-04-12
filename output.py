@@ -74,7 +74,7 @@ def worker_mail(nodes,keeper):
             # Sende Mail(s)
             for addr in value["addresses"]:
                 subject=mail.createMailSubject(hostname)
-                text=mail.createMailText(hostname, print_timedelta(timedelta),print_date(lastseen), keeper_mail, keeper_name)
+                text=mail.createMailText(hostname, timedelta.days,print_date(lastseen), keeper_mail, keeper_name)
                 print(hostname+ ": Send Mail to " + addr + ". " + str(timedelta.days) +" day(s) offline.")
                 mail.sendMail(addr,subject,text)
 
