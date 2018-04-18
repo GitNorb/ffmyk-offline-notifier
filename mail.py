@@ -33,7 +33,7 @@ def createMailText(hostname, timedelta_days,lastseen, keeper_mail, keeper_name):
     return (hello+firstaid+contact+bye)
 
 def createMailSubject(name_of_node):
-    return "Automatische Benachrichtigung: Frifunk Knoten " + name_of_node + " offline"
+    return "Automatische Benachrichtigung: Freifunk Knoten " + name_of_node + " offline"
 
 def createTxtHello(hostname, timedelta_days, lastseen):
     return ("Hallo,<br><br>Ihr Router "+hostname+" ist seit "+str(timedelta_days)+" Tagen, also seit dem "+str(lastseen)+" offline.<br><br>")
