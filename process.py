@@ -3,6 +3,7 @@
 
 from dateutil.parser import parse
 import datetime
+import sys
 
 def merge_data(nodelist_json, hostname_map, lastseen_map):
     for key,value in nodelist_json["nodes"].items():
@@ -37,3 +38,30 @@ def extract_hostname_and_lastseen(nodelist):
         lastseen_map[id] = dt
         hostname_map[id] = hostname
     return lastseen_map, hostname_map
+
+# Zähle wie viele Knoten einer Sites online/offline sind, um Probleme mit der Karte aufzudecken
+
+
+
+def test_sites(nodes):
+    sites = {}
+    for node in nodes:
+        online = node["flags"]["online"]
+        site = node["nodeinfo"]["system"]["site_code"]
+        if not (site in sites):
+            sites[site]={"online":0,"offline":0}
+        if online:
+            sites[site]["online"]=sites[site]["online"]+1
+        else:
+            sites[site]["offline"] = sites[site]["offline"] + 1
+    offline_sites=[]
+    for key,value in sites.items():
+        online = value["online"]
+        offline = value["offline"]
+        proportion = online/(offline+online)
+        if proportion < 0.5:
+            offline_sites.append(key)
+            print(key + " ist mehrstens offline!")
+    if len(offline_sites)>1:
+        print("Abbruch wegen offline Sites!")
+        sys.exit(1)

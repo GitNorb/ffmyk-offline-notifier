@@ -49,7 +49,7 @@ def worker_stdout(nodes):
                 print(id + ": " + hostname + " " + print_timedelta(timedelta) + " offline. (" + print_date(lastseen) + ")")
             print()  # NewLine
 
-def worker_mail(nodes,keeper):
+def worker_mail(nodes,keeper,nomail):
     # Knotenliste abarbeiten
     one_day = datetime.timedelta(days=1)
     keeper_name=keeper["name"]
@@ -76,7 +76,8 @@ def worker_mail(nodes,keeper):
                 subject=mail.createMailSubject(hostname)
                 text=mail.createMailText(hostname, timedelta.days,print_date(lastseen), keeper_mail, keeper_name)
                 print(hostname+ ": Send Mail to " + addr + ". " + str(timedelta.days) +" day(s) offline.")
-                mail.sendMail(addr,subject,text)
+                if not nomail:
+                    mail.sendMail(addr,subject,text)
 
 def test_for_notify_at_day(timedelta,list_of_days):
     day_offline = timedelta.days
